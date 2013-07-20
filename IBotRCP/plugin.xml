@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.fsch.ibotrcp.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="de.fsch.ibotrcp.Perspective"
+            icon="icons/tws40.ico"
+            id="IBotRCP.perspective"
+            name="Ibotrcp Perspective">
+      </perspective>
+   </extension>
+   <extension point="org.eclipse.ui.views">
+      <view
+            class="de.fsch.ibotrcp.view.InitialView"
+            id="de.fsch.ibotrcp.view.InitialView"
+            name="IBotRCP"/>
+      <view
+            class="de.fsch.ibotrcp.view.FormView"
+            id="de.fsch.ibotrcp.view.FormView"
+            name="FormView"/>
+      <view
+            class="de.fsch.ibotrcp.view.MarketDataView"
+            id="de.fsch.ibotrcp.view.MarketDataView"
+            name="Markdaten"/>
+      <view
+            class="de.fsch.ibotrcp.view.IndexTreeView"
+            id="de.fsch.ibotrcp.view.IndexTreeView"
+            name="IndexTree">
+      </view>
+      <view
+            class="de.fsch.ibotrcp.view.EditAssetView"
+            icon="icons/StockIcon16x16.JPG"
+            id="de.fsch.ibotrcp.view.EditAssetView"
+            name="Asset editieren">
+      </view>
+      <view
+            class="de.fsch.ibotrcp.view.ClassContentOutlineView"
+            id="de.fsch.ibotrcp.view.ClassContentOutlineView"
+            name="Klasse editieren">
+      </view>
+      <view
+            class="de.fsch.ibotrcp.view.IndexDetailView"
+            icon="icons/MoneySandClock16x16.JPG"
+            id="de.fsch.ibotrcp.view.IndexDetailView"
+            name="Index Tabelle">
+      </view>
+      <view
+            class="cbg.article.treeviewer.ui.MovingBoxView"
+            id="cbg.article.treeviewer.ui.MovingBoxView"
+            name="Moving Box">
+      </view>
+      <view
+            class="de.fsch.ibotrcp.view.GermanStocksView"
+            id="de.fsch.ibotrcp.view.GermanStocksView"
+            name="Deutsche Aktien">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.fsch.ibotrcp.action.menuActionCategory"
+            description="Testaction zum öffnen eines Dialoges"
+            id="IBotRCP.openMessage"
+            name="Open Message Dialog"/>
+      <command
+            categoryId="de.fsch.ibotrcp.action.menuActionCategory"
+            description="Öffnet einen anderen View"
+            id="IBotRCP.openView"
+            name="Open View"/>
+      <command
+            categoryId="de.fsch.ibotrcp.action.menuActionCategory"
+            description="Öffnet die JFace Console"
+            id="IBotRCP.openConsole"
+            name="Open Console"/>
+      <command
+            categoryId="de.fsch.ibotrcp.action.menuActionCategory"
+            description="Stellt die Verbindung zur TWS her"
+            id="IBotRCP.connectTWS"
+            name="Connect TWS"/>            
+      <command
+            categoryId="de.fsch.ibotrcp.action.menuActionCategory"
+            description="Beendet die Verbindung zur TWS"
+            id="IBotRCP.disconnectTWS"
+            name="Disconnect TWS"/>
+      <command
+            categoryId="de.fsch.ibotrcp.action.viewActionCategory"
+            description="Speichert die aktuelle Aktie"
+            id="IBotRCP.saveStock"
+            name="Aktie speichern">
+      </command>
+      <category
+            description="Kategory für alle View Actions"
+            id="de.fsch.ibotrcp.action.viewActionCategory"
+            name="View Commands">
+      </category>
+      <category
+            description="Actions für alle Menü oder Toolbar Aktionen"
+            id="de.fsch.ibotrcp.action.menuActionCategory"
+            name="Menu Commands">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="de.fsch.ibotrcp.preferences.TWSSocketPreferencePage"
+            id="de.fsch.ibotrcp.preferences.TWSSocketPreferencePage"
+            name="TWS Socket"/>
+      <page
+            class="de.fsch.ibotrcp.preferences.PSQLPreferencePage"
+            id="de.fsch.ibotrcp.preferences.PSQLPreferencePage"
+            name="PostgreSQL">
+      </page>
+      <page
+            class="de.fsch.ibotrcp.preferences.general.GeneralPreferencePage"
+            id="de.fsch.ibotrcp.preferences.general.GeneralPreferencePage"
+            name="Allgemeine Einstellungen">
+      </page>
+      <page
+            category="de.fsch.ibotrcp.preferences.general.GeneralPreferencePage"
+            class="de.fsch.ibotrcp.preferences.general.EditAssetPreferencePage"
+            id="de.fsch.ibotrcp.preferences.general.EditAssetPreferencePage"
+            name="Aktie editieren">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="de.fsch.ibotrcp.preferences.PreferenceInitializer"/>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="IBotRCP.application"
+            name="IBotRCP">
+         <property
+               name="aboutText"
+               value="IBotRCP &#x0A;See http://www.dynapp.de for details"/>
+         <property
+               name="aboutImage"
+               value="icons/About250x250.gif"/>
+         <property
+               name="windowImages"
+               value="icons/Window16x16.gif,icons/Window32x32.gif,icons/Window48x48.gif,icons/Window64x64.gif,icons/Window128x128.gif"/>
+         <property
+               name="appName"
+               value="IBotRCP">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

@@ -1,0 +1,12 @@
+com.ib.client
+com.ib.client.test
+de.fsch.ibotrcp
+de.fsch.ibotrcp.action
+de.fsch.ibotrcp.controller
+de.fsch.ibotrcp.job
+de.fsch.ibotrcp.model
+de.fsch.ibotrcp.preferences
+de.fsch.ibotrcp.view
+de.fsch.ibotrcp.view.listener
+de.ibotrcp.db4o
+test.databinding

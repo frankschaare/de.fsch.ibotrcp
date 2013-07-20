@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IBotRCP Plug-in
+Bundle-SymbolicName: IBotRCP; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: ibptrcp.jar,
+ lib/org.postgresql.jdbc_8.2.505.jar,
+ lib/com.db4o_6.1.0.jar
+Bundle-Activator: de.fsch.ibotrcp.Activator
+Bundle-Vendor: http://www.dynapp.de
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms,
+ org.eclipse.ui.console,
+ org.eclipse.core.databinding,
+ org.eclipse.core.databinding.beans,
+ org.eclipse.jface.databinding,
+ org.eclipse.ui.views,
+ org.eclipse.jdt.core,
+ org.eclipse.core.resources,
+ org.eclipse.pde.runtime
+Eclipse-LazyStart: true
